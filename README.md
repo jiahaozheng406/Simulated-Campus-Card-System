@@ -1,116 +1,127 @@
-# Simulated-Campus-Card-System
+##Campus Card Management System
+# C++ 校园卡管理系统
 
-# 💳 C++ 校园卡管理系统 (Campus Card Lite)
+**简介**
+这是一个用 C++ 写的校园卡模拟程序。
+不需要安装数据库，所有数据（账户信息、消费记录）都直接保存在本地的 TXT 文本文件中。程序包含了学生日常使用（充值、消费）和管理员后台管理（挂失、统计）的完整功能。
 
-## 👋 简介
+**核心特点**
 
-基于 C++ 开发的**轻量级校园卡模拟器**。
-零依赖、无数据库，仅通过**原生代码**与**文件流技术**，实现注册、充值、消费及后台管理的全流程闭环。
-
-## 🛠️ 技术栈
-
-* **原生开发**: 基于 C++ STL 标准库。
+* **纯代码实现**：只用了 C++ 标准库，没用复杂的第三方工具。
 * 
-**链表结构**: 采用单向链表动态管理内存数据 。
-*
-**持久存储**: 账户与流水实时写入 TXT，掉电不丢失 。
-*
-* **交互优化**: 适配 Windows 控制台，支持清屏与无回显输入。
+**链表管理**：在内存中用单向链表存数据，比数组更灵活，方便增删用户 。
 
-## ✨ 核心功能
-
-### 🧑‍🎓 学生模块
 
 * 
-**安全风控**: 连续 3 次错密自动冻结账户 。
-* 
-**隐私掩码**: 密码输入回显为 `******` 。
-* 
-**自动结算**: 2元/时计费，余额不足自动拦截 。
-* 
-**流水追溯**: 支持充值与消费记录的双向查询 。
+**自动保存**：所有操作实时写入文件，程序关闭后数据不会丢 。
 
-
-
-### 👨‍💻 管理模块
 
 * 
-**账户运维**: 全局状态监控，支持一键挂失与密码重置 。
+**安全输入**：输入密码时屏幕显示星号 `******`，防窥屏 。
+
+
+
+**功能列表**
+
+* **学生功能**
 * 
-**财务审计**: 自动遍历日志，核算当日充值总收 。
-* **权限隔离**: 独立管理员入口 (默认: `zjh` / `zjh`)。
+**登录保护**：输错 3 次密码自动冻结账号 。
 
-## 📂 目录结构
-
-```text
-.
-├── main.cpp         # 主程序入口
-├── cards.txt        # 账户数据库
-├── [卡号].txt       # 交易流水日志
-└── README.md        # 项目文档
-
-```
-
-## 🚀 快速启动
-
-1. **环境**: Windows (依赖 `conio.h`).
-2. **编译**: 需添加宏 `_CRT_SECURE_NO_WARNINGS`.
-3. **运行**: 编译后直接运行 `exe` 即可。
-
-
-
-
-
-## 👋 Introduction
-
-A **lightweight campus card simulator** built with C++.
-Zero dependencies and database-free. It utilizes **native code** and **file streams** to implement the complete lifecycle: registration, recharge, expense, and backend management.
-
-## 🛠️ Tech Stack
-
-* **Native Dev**: Built purely with C++ STL.
-* 
-**Linked List**: Dynamic memory management using singly linked lists .
-* 
-**Persistence**: Real-time syncing of accounts and logs to TXT files .
-
-* **Interaction**: Optimized for Windows Console with clear-screen and input handling.
-
-## ✨ Core Features
-
-### 🧑‍🎓 Student Module
 
 * 
-**Risk Control**: Account auto-freezes after 3 consecutive failed login attempts .
-* 
-**Input Masking**: Passwords are masked as `******` during input .
-* 
-**Auto-Billing**: Hourly rate (2.0/hr) with automatic insufficient funds blocking .
-* 
-**Traceability**: Bidirectional query support for recharge and expense history .
+**上机消费**：按 2元/小时 扣费，余额不足会自动拦截 。
 
-
-### 👨‍💻 Admin Module
 
 * 
-**Operations**: Global status monitoring, one-click "Report Loss", and password resets .
+**账单查询**：可以查充值记录和消费流水 。
+
+
+
+
+* **管理员功能** (默认账号: `zjh` / 密码: `zjh`)
 * 
-**Auditing**: Automated traversal of logs to calculate daily recharge revenue .
-* **Auth Isolation**: Dedicated administrator login portal (Default: `zjh` / `zjh`).
+**用户维护**：查看所有卡状态，支持一键挂失、重置密码 。
 
-## 📂 File Structure
 
-```text
-.
-├── main.cpp         # Entry Point
-├── cards.txt        # Account Database
-├── [ID].txt         # Transaction Logs
-└── README.md        # Documentation
+* 
+**收入统计**：自动计算当天的充值总金额 。
 
-```
 
-## 🚀 Quick Start
 
-1. **Env**: Windows (Requires `conio.h`).
-2. **Compile**: Add `_CRT_SECURE_NO_WARNINGS` macro.
-3. **Run**: Execute the compiled `exe` directly.
+
+
+**文件说明**
+
+* `main.cpp`: 主程序代码。
+* `cards.txt`: 存所有用户的基本信息。
+* `[卡号].txt`: 自动生成的，存每个人的具体流水。
+
+**如何运行**
+
+1. 环境：需要 Windows 系统（因为用了 `conio.h` 做键盘交互）。
+2. 编译：代码中使用了时间函数，编译时如果报错，请添加宏定义 `_CRT_SECURE_NO_WARNINGS`。
+3. 运行：编译出 exe 后直接打开即可。
+
+---
+
+# C++ Campus Card System 
+
+**Introduction**
+A simple C++ console program that simulates a university ID card system.
+It requires no database installation; all data (accounts and transaction logs) are saved directly into local TXT files. It covers full functionality for both students (recharge, expense) and administrators (management, statistics).
+
+**Key Features**
+
+* **Native C++**: Built using only the Standard Template Library (STL).
+* 
+**Linked Lists**: Uses linked lists in memory instead of arrays for flexible user management .
+
+
+* 
+**Auto-Save**: Data is written to files in real-time, ensuring nothing is lost after closing the program .
+
+
+* 
+**Privacy**: Passwords are masked as `******` during input .
+
+
+
+**Functionality**
+
+* **For Students**
+* 
+**Security**: Account freezes automatically after 3 consecutive wrong passwords .
+
+
+* **Expense**: Charges 2.0/hour. Transactions are blocked if the balance is insufficient .
+
+
+* 
+**History**: View detailed logs for recharges and expenses .
+
+
+
+
+* **For Admins** (Default: `zjh` / `zjh`)
+* 
+**Management**: View user statuses, report lost cards, or reset passwords .
+
+
+* 
+**Statistics**: One-click calculation of the daily total recharge income .
+
+
+
+
+
+**Files**
+
+* `main.cpp`: Main source code.
+* `cards.txt`: Database for all user accounts.
+* `[ID].txt`: Auto-generated logs for individual transaction history.
+
+**How to Run**
+
+1. **System**: Windows is required (due to `conio.h` for console interaction).
+2. **Compile**: Add the `_CRT_SECURE_NO_WARNINGS` macro to avoid warnings about time functions.
+3. **Run**: Execute the compiled exe file directly.
