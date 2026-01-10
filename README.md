@@ -1,127 +1,31 @@
-##Campus Card Management System
+### Simulated-Campus-Card-System
+
 # C++ 校园卡管理系统
 
-**简介**
-这是一个用 C++ 写的校园卡模拟程序。
-不需要安装数据库，所有数据（账户信息、消费记录）都直接保存在本地的 TXT 文本文件中。程序包含了学生日常使用（充值、消费）和管理员后台管理（挂失、统计）的完整功能。
+**项目介绍**
+这是一个纯 C++ 编写的控制台程序，模拟了校园卡系统的完整流程。它不依赖数据库，而是通过**链表**在内存中高效管理数据 ，并利用**文件流**将账户信息和消费记录实时保存到本地 TXT 文件中，确保数据不丢失 。
 
-**核心特点**
+**功能概览**
+在**学生端**，系统注重安全与便捷。登录时若连续 3 次输错密码会自动冻结账户 ，输入密码时屏幕仅显示*以保护隐私 。上机消费按 2元/小时 自动计费，余额不足时会智能拦截 ，并支持随时查询充值与消费流水 。
 
-* **纯代码实现**：只用了 C++ 标准库，没用复杂的第三方工具。
-* 
-**链表管理**：在内存中用单向链表存数据，比数组更灵活，方便增删用户 。
+在**管理员端** (默认账号 `zjh`/`zjh`)，您可以查看所有持卡人状态，支持一键挂失或重置密码 。系统还内置了财务统计功能，能自动遍历日志文件，快速核算当天的充值总收入 。
 
-
-* 
-**自动保存**：所有操作实时写入文件，程序关闭后数据不会丢 。
-
-
-* 
-**安全输入**：输入密码时屏幕显示星号 `******`，防窥屏 。
-
-
-
-**功能列表**
-
-* **学生功能**
-* 
-**登录保护**：输错 3 次密码自动冻结账号 。
-
-
-* 
-**上机消费**：按 2元/小时 扣费，余额不足会自动拦截 。
-
-
-* 
-**账单查询**：可以查充值记录和消费流水 。
-
-
-
-
-* **管理员功能** (默认账号: `zjh` / 密码: `zjh`)
-* 
-**用户维护**：查看所有卡状态，支持一键挂失、重置密码 。
-
-
-* 
-**收入统计**：自动计算当天的充值总金额 。
-
-
-
-
-
-**文件说明**
-
-* `main.cpp`: 主程序代码。
-* `cards.txt`: 存所有用户的基本信息。
-* `[卡号].txt`: 自动生成的，存每个人的具体流水。
-
-**如何运行**
-
-1. 环境：需要 Windows 系统（因为用了 `conio.h` 做键盘交互）。
-2. 编译：代码中使用了时间函数，编译时如果报错，请添加宏定义 `_CRT_SECURE_NO_WARNINGS`。
-3. 运行：编译出 exe 后直接打开即可。
+**运行说明**
+项目包含 `main.cpp` 主程序及自动生成的 `cards.txt` 数据库。由于使用了 Windows 控制台特性，请在 Windows 环境下编译运行，并建议添加 `_CRT_SECURE_NO_WARNINGS` 宏以避免时间函数的报错。
 
 ---
 
-# C++ Campus Card System 
+### English Version
 
-**Introduction**
-A simple C++ console program that simulates a university ID card system.
-It requires no database installation; all data (accounts and transaction logs) are saved directly into local TXT files. It covers full functionality for both students (recharge, expense) and administrators (management, statistics).
+# C++ Campus Card System Lite
 
-**Key Features**
+**Overview**
+This is a pure C++ console application that simulates a complete campus card system. Instead of using a database, it efficiently manages data in memory using **Linked Lists** and persists all account details and transaction logs to local TXT files in real-time .
 
-* **Native C++**: Built using only the Standard Template Library (STL).
-* 
-**Linked Lists**: Uses linked lists in memory instead of arrays for flexible user management .
+**Features**
+For **Students**, the system prioritizes security. Accounts are automatically frozen after 3 failed login attempts , and password input is masked with * . Expenses are calculated at a rate of 2.0/hour, with automatic blocking if funds are insufficient . Users can also view their full recharge and expense history .
 
-
-* 
-**Auto-Save**: Data is written to files in real-time, ensuring nothing is lost after closing the program .
-
-
-* 
-**Privacy**: Passwords are masked as `******` during input .
-
-
-
-**Functionality**
-
-* **For Students**
-* 
-**Security**: Account freezes automatically after 3 consecutive wrong passwords .
-
-
-* **Expense**: Charges 2.0/hour. Transactions are blocked if the balance is insufficient .
-
-
-* 
-**History**: View detailed logs for recharges and expenses .
-
-
-
-
-* **For Admins** (Default: `zjh` / `zjh`)
-* 
-**Management**: View user statuses, report lost cards, or reset passwords .
-
-
-* 
-**Statistics**: One-click calculation of the daily total recharge income .
-
-
-
-
-
-**Files**
-
-* `main.cpp`: Main source code.
-* `cards.txt`: Database for all user accounts.
-* `[ID].txt`: Auto-generated logs for individual transaction history.
+For **Administrators** (default: `zjh`/`zjh`), the system offers full control to view user statuses, report lost cards, or reset passwords . It also includes a financial analytics feature that parses log files to calculate the total daily recharge revenue .
 
 **How to Run**
-
-1. **System**: Windows is required (due to `conio.h` for console interaction).
-2. **Compile**: Add the `_CRT_SECURE_NO_WARNINGS` macro to avoid warnings about time functions.
-3. **Run**: Execute the compiled exe file directly.
+The project consists of the `main.cpp` source and auto-generated `cards.txt`. It requires a Windows environment due to console-specific features. Please add the `_CRT_SECURE_NO_WARNINGS` macro during compilation to avoid time function warnings.
