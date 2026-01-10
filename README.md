@@ -61,12 +61,6 @@
 
 
 
-Here is the refined English version, matching the concise and technical tone of the Chinese version.
-
----
-
-# 💳 C++ Campus Card Management System (Campus Card Lite)
-
 ## 👋 Introduction
 
 A **lightweight campus card simulator** built with C++.
