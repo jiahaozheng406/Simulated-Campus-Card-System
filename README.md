@@ -1,9 +1,5 @@
 # Simulated-Campus-Card-System
 
-这是一个精简去重、术语更专业的版本。去掉了一些修饰性的“废话”（如“逻辑的大脑”、“告别限制”等），直接采用技术词汇，更加干练。
-
----
-
 # 💳 C++ 校园卡管理系统 (Campus Card Lite)
 
 ## 👋 简介
@@ -16,12 +12,9 @@
 * **原生开发**: 基于 C++ STL 标准库。
 * 
 **链表结构**: 采用单向链表动态管理内存数据 。
-
-
-* 
+*
 **持久存储**: 账户与流水实时写入 TXT，掉电不丢失 。
-
-
+*
 * **交互优化**: 适配 Windows 控制台，支持清屏与无回显输入。
 
 ## ✨ 核心功能
@@ -30,16 +23,10 @@
 
 * 
 **安全风控**: 连续 3 次错密自动冻结账户 。
-
-
 * 
 **隐私掩码**: 密码输入回显为 `******` 。
-
-
 * 
 **自动结算**: 2元/时计费，余额不足自动拦截 。
-
-
 * 
 **流水追溯**: 支持充值与消费记录的双向查询 。
 
@@ -49,12 +36,8 @@
 
 * 
 **账户运维**: 全局状态监控，支持一键挂失与密码重置 。
-
-
 * 
 **财务审计**: 自动遍历日志，核算当日充值总收 。
-
-
 * **权限隔离**: 独立管理员入口 (默认: `zjh` / `zjh`)。
 
 ## 📂 目录结构
@@ -94,11 +77,8 @@ Zero dependencies and database-free. It utilizes **native code** and **file stre
 * **Native Dev**: Built purely with C++ STL.
 * 
 **Linked List**: Dynamic memory management using singly linked lists .
-
-
 * 
 **Persistence**: Real-time syncing of accounts and logs to TXT files .
-
 
 * **Interaction**: Optimized for Windows Console with clear-screen and input handling.
 
@@ -108,31 +88,20 @@ Zero dependencies and database-free. It utilizes **native code** and **file stre
 
 * 
 **Risk Control**: Account auto-freezes after 3 consecutive failed login attempts .
-
-
 * 
 **Input Masking**: Passwords are masked as `******` during input .
-
-
 * 
 **Auto-Billing**: Hourly rate (2.0/hr) with automatic insufficient funds blocking .
-
-
 * 
 **Traceability**: Bidirectional query support for recharge and expense history .
-
 
 
 ### 👨‍💻 Admin Module
 
 * 
 **Operations**: Global status monitoring, one-click "Report Loss", and password resets .
-
-
 * 
 **Auditing**: Automated traversal of logs to calculate daily recharge revenue .
-
-
 * **Auth Isolation**: Dedicated administrator login portal (Default: `zjh` / `zjh`).
 
 ## 📂 File Structure
