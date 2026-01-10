@@ -13,7 +13,7 @@
 **运行说明**
 项目包含 `main.cpp` 主程序及自动生成的 `cards.txt` 数据库。由于使用了 Windows 控制台特性，请在 Windows 环境下编译运行，并建议添加 `_CRT_SECURE_NO_WARNINGS` 宏以避免时间函数的报错。
 
-**更加详细的流程介绍请见报告和代码，如有相关问题和漏洞恳请批评指正**
+**更加详细的流程介绍请见报告（report.pdf）和代码，如有相关问题和漏洞恳请批评指正**
 
 
 
@@ -28,4 +28,4 @@ For **Administrators** (default: `zjh`/`zjh`), the system offers full control to
 **How to Run**
 The project consists of the `main.cpp` source and auto-generated `cards.txt`. It requires a Windows environment due to console-specific features. Please add the `_CRT_SECURE_NO_WARNINGS` macro during compilation to avoid time function warnings.
 
-**Please see the report and code for a more detailed process description. We welcome any feedback and corrections regarding any issues or vulnerabilities.**
+**Please see the report.pdf and code for a more detailed process description. We welcome any feedback and corrections regarding any issues or vulnerabilities.**
