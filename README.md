@@ -1,6 +1,7 @@
 # Simulated-Campus-Card-System
 
-### C++ 校园卡管理系统
+
+## C++ 校园卡管理系统
 
 **项目介绍**
 这是一个纯 C++ 编写的控制台程序，模拟了校园卡系统的完整流程。它不依赖数据库，而是通过**链表**在内存中高效管理数据 ，并利用**文件流**将账户信息和消费记录实时保存到本地 TXT 文件中，确保数据不丢失 。
@@ -15,7 +16,7 @@
 
 **更加详细的流程介绍请见报告（report.pdf）和代码，如有相关问题和漏洞恳请批评指正**
 
-
+---
 
 **Overview**
 This is a pure C++ console application that simulates a complete campus card system. Instead of using a database, it efficiently manages data in memory using **Linked Lists** and persists all account details and transaction logs to local TXT files in real-time .
